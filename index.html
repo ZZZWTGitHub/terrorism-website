@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Analysis of Global Terrorism Database">
+	<meta name="author" content="ZZZWT">
+
+	<title>Analysis of Global Terrorism Database</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/midnight-styles.css">
+	<link rel="stylesheet" href="css/pygment_trac.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/d3.css">
+	<link rel="stylesheet" href="css/selectize.css">
+
+</head>
+
+<body>
+	<div id="header">
+		<div class="wrapper">
+			<ul class="nav left">
+				<li><a href="https://github.com/ZZZWTGitHub/terrorism-website" target="_blank" class="btn">Project On GitHub</a></li>
+				</ul>
+			<ul class="nav right">
+				<li class="download-title">See More</li>
+				<li class="downloads"><a href="./more.html" target="_blank" class="btn">Go</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- end header -->
+	<div class="wrapper">
+		<section>
+			<div id="title">
+				<h1>Global Terrorism Database: <em>Interactive Analysis </em></h1>
+				<h5>As final project of the course BigData Processing tech (2022) at BIT</h5>
+				<hr class="dashed">
+				<span class="credits left">Website Powered by <a href="https://github.com/ZZZWTGitHub" target="_blank">ZZZWT</a></span>
+				</div>
+		</section>
+		<section>
+			<h2>Contents</h2>
+			<hr class="dashed">
+			<p>Click to Jump</p>
+			<ul class="level1">
+				<li><a href="#section-introduction">1. Introduction</a></li>
+				<li><a href="#section-dataset">2. Dataset</a></li>
+				<ul class="level2">
+					<li><a href="#section-columns">2.1. Columns</a></li>
+				</ul>
+				<li><a href="#section-charts">3. Charts</a></li>
+				<ul class="level2">
+					<li><a href="#section-histogram">3.1. Histogram</a></li>
+					<li><a href="#section-scatterplot">3.2. Scatterplot</a></li>
+				</ul>
+				<li><a href="#section-further-information">4. Further information</a></li>
+			</ul>
+		</section>
+		<section>
+			<div id="section-introduction" class="anchor"></div>
+			<h2>1. Introduction</h2>
+			<hr class="dashed">
+			<p>
+				The spread of terrorism throughout the world has seriously endangered the safety of human life and property. Affected by such factors as the protracted covid-19 pandemic, intensified global geopolitical confrontation, and continued global economic downturn, the development of international terrorism and extremism has become more complex, and the international counter-terrorism situation remains grim.
+			</p>
+			<p>
+				We hope that the project can provide researchers with analytical data support, can also be interested in the provision of corresponding query services to contribute to international counter-terrorism.
+			</p>
+			<p>
+				Group members & task assignments
+			</p>
+			<ul>
+				<li><span class="highlight">张文通</span>: Visual presentation and website construction</li>
+				<li><span class="highlight">王惟笑</span>: Knowledge Map and Intelligent Query System construction</li>
+				<li><span class="highlight">徐佳璐</span>: Statistics and visualization</li>
+				<li><span class="highlight">王冰冰</span>: Data cleaning and prediction tasks</li>
+			</ul>
+			<p>
+				More information in DOC
+			</p>
+		</section>
+		<section>
+			<div id="section-dataset" class="anchor"></div>
+			<h2>2. Dataset</h2>
+			<hr class="dashed">
+			<p>
+				Global Terrorism Database is an open-source data set for global terrorism events. It contains information of more than 180,000 terrorist attacks worldwide, from 1970 to 2017. The database is maintained by researchers at the National Consortium for the Study of Terrorism and Responses to Terrorism (START), headquartered at the University of Maryland. We want to use this database to build an analysis platform for users to gain information of global terrorism.
+			</p>
+		<section>
+			<div id="section-charts" class="anchor"></div>
+			<h2>3. Charts</h2>
+			<hr class="dashed">
+			<p>
+				Visualization by D3.js, More in <a href="./more.html" target="_blank">here</a>
+			</p>
+		</section>
+		<section>
+			<div id="section-histogram" class="anchor"></div>
+			<h3>3.1. Histogram</h3>
+			<hr class="dashed">
+			<p>
+				This histogram is Multilevel Grouped to show data trends <span class="highlight">from 1970 through 2015</span>
+			</p>
+			<p>
+				Actually, data in 1993 is missed in data source
+			</p>
+			<div class="half">
+				<select id="histogram-select-category" placeholder="Select category...">
+
+				</select>
+				<select id="histogram-select-subcategory" placeholder="Select subcategory...">
+
+				</select>
+				<select id="histogram-select-metric" placeholder="Select metric...">
+
+				</select>
+			</div>
+			<div class="loader"></div>
+			<div id="histogram" style="display:none;">
+				<svg id="svg-histogram">
+
+				</svg>
+			</div>
+		</section>
+		<section>
+			<div id="section-scatterplot" class="anchor"></div>
+			<h3>3.2. Scatterplot</h3>
+			<hr class="dashed">
+			<p>
+				Here is Scatterplot to show more attributes in different dimension:
+				<ul>
+					<li><span class="highlight">X</span>: <em>Killed</em>,</li>
+					<li><span class="highlight">Y</span>: <em>Wounded</em>, and</li>
+					<li><span class="highlight">Size</span>: <em>Count</em></li>
+				</ul>
+				Disparity between data is large, so here are <span class="highlight">Relative</span> and <span class="highlight">Absolute</span>: 
+			</p>
+			<div class="half">
+				<select id="scatterplot-select-category" placeholder="Select category...">
+
+				</select>
+				<select id="scatterplot-select-subcategory" placeholder="Select subcategory...">
+
+				</select>
+				<select id="scatterplot-select-type" placeholder="Select type...">
+
+				</select>
+				<select id="scatterplot-select-role" placeholder="Select role...">
+
+				</select>
+
+				<input id="scatterplot-button-relative" type="radio" name="options" autocomplete="off" checked>
+				<label for="scatterplot-button-relative">
+					<span></span>
+					Relative
+				</label>
+
+
+				<input id="scatterplot-button-absolute" type="radio" name="options" autocomplete="off">
+				<label for="scatterplot-button-absolute">
+					<span></span>
+					Absolute
+				</label>
+			</div>
+			<div class="loader"></div>
+			<div id="scatterplot" style="display:none;">
+				<svg id="svg-scatterplot">
+
+				</svg>
+			</div>
+		</section>
+		<section>
+			<div id="section-further-information" class="anchor"></div>
+			<h2>4. Further Information</h2>
+			<hr class="dashed">
+			<p>
+				Limited by Web Tech, this page can not exhibite a lot, further information to Click <a href="./more.html" target="_blank">here</a>, and see more.
+			</p>
+
+
+		</section>
+	</div>
+
+	<script src="libraries/jquery.min.js"></script>
+	<script src="libraries/d3.min.js"></script>
+	<script src="libraries/d3-hexbin.min.js"></script>
+	<script src="libraries/selectize.min.js"></script>
+
+	<!-- D3 tip -->
+	<script src="js/third-party/d3-tip.js"></script>
+	<script src="js/third-party/kdTree.js"></script>
+
+	<!-- Charts -->
+	<script src="js/histogram.js"></script>
+	<script src="js/scatterplot.js"></script>
+	<script src="js/choropleth.js"></script>
+	<script src="js/kmeans.js"></script>
+	<script src="js/knn.js"></script>
+
+	<script src="js/loaddata.js"></script>
+	<script>
+		// Callback
+		var callCharts = function() {
+
+			var loaders = document.getElementsByClassName("loader");
+
+			for (var i = 0; i < loaders.length; i++) {
+				loaders[i].style.display = "none";
+			}
+
+			document.getElementById("histogram").style.display = "block";
+			document.getElementById("scatterplot").style.display = "block";
+
+			// Load charts
+			loadHistogram();
+			loadScatterplot();
+		}
+
+		loadData(callCharts);
+	</script>
+</body>
+
+</html>
